@@ -143,7 +143,7 @@ banking_system/
 │
 ├── db/
 │   ├── __init__.py
-│   ├── connection.py
+│   ├── config.py
 │   ├── users.py
 │   ├── accounts.py
 │   └── transactions.py
