@@ -136,6 +136,48 @@ Follow the on-screen prompts to manage users, accounts, and transactions.
 
 ---
 
+💡 Recommended Indexes (Optional)
+
+To improve performance on common queries and joins, you can create the following indexes:
+
+```
+-- Users table
+CREATE UNIQUE INDEX idx_users_email ON users(email);
+
+-- Accounts table
+CREATE INDEX idx_accounts_user_id ON accounts(user_id);
+
+-- Transactions table
+CREATE INDEX idx_transactions_account_id ON transactions(account_id);
+CREATE INDEX idx_transactions_account_created_at
+    ON transactions(account_id, created_at DESC);
+```
+⚡ These indexes are especially useful for:
+- Looking up users by email
+- Retrieving all accounts for a specific user
+- Retrieving transactions for an account, sorted by most recent
+
+---
+
+## 🛠️ Index Maintenance (Optional)
+
+To keep queries fast, especially on the `transactions` table, you may occasionally **rebuild or refresh indexes**:
+
+```sql
+-- Rebuild all indexes on a table
+REINDEX TABLE transactions;
+
+-- Update table statistics for the query planner
+ANALYZE transactions;
+```
+💡 Tips:
+
+- Do this after large inserts, updates, or deletes
+- For high-activity tables, consider weekly maintenance
+- For smaller tables like users or accounts, monthly is usually enough
+
+---
+
 ## 📁 Project Structure (Example)
 
 ```
