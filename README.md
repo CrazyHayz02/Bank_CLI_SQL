@@ -136,6 +136,30 @@ Follow the on-screen prompts to manage users, accounts, and transactions.
 
 ---
 
+## 📁 Project Structure (Example)
+
+```
+banking_system/
+│
+├── db/
+│   ├── __init__.py
+│   ├── connection.py
+│   ├── users.py
+│   ├── accounts.py
+│   └── transactions.py
+│
+├── services/
+│   ├── __init__.py
+│   └── banking_service.py
+│
+├── main.py
+├── requirements.txt
+├── .env
+└── README.md
+```
+
+---
+
 ## 📌 Notes
 
 * Ensure your PostgreSQL service is running before starting the application
