@@ -37,4 +37,4 @@ CREATE TABLE IF NOT EXISTS transactions (
 -- =========================================
 CREATE INDEX IF NOT EXISTS idx_accounts_user_id ON accounts(user_id);
 CREATE INDEX IF NOT EXISTS idx_transactions_account_id ON transactions(account_id);
-CREATE INDEX IF NOT EXISTS idx_transactions_created_at ON transactions(created_at);
+CREATE INDEX IF NOT EXISTS idx_transactions_account_created_at ON transactions(account_id, created_at DESC);
