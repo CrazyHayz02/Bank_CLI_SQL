@@ -14,4 +14,4 @@ __pycache__/
 Thumbs.db
 
 
-db_conection.py
+db_connection.py
