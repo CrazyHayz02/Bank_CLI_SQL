@@ -136,9 +136,9 @@ Follow the on-screen prompts to manage users, accounts, and transactions.
 
 ---
 
-💡 Recommended Indexes (Optional)
+💡 Indexes
 
-To improve performance on common queries and joins, you can create the following indexes:
+To improve performance on common queries and joins, you have the following indexes in the `.sql` files, or you could add them yourself:
 
 ```
 -- Users table
@@ -149,8 +149,7 @@ CREATE INDEX idx_accounts_user_id ON accounts(user_id);
 
 -- Transactions table
 CREATE INDEX idx_transactions_account_id ON transactions(account_id);
-CREATE INDEX idx_transactions_account_created_at
-    ON transactions(account_id, created_at DESC);
+CREATE INDEX idx_transactions_account_created_at ON transactions(account_id, created_at DESC);
 ```
 ⚡ These indexes are especially useful for:
 - Looking up users by email
