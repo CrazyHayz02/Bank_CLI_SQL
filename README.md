@@ -42,7 +42,7 @@ psql -U <your_username> -f bank_db.sql
 If you **already have** a database named `bank_db`:
 
 ```bash
-psql -U <your_username> -d bank_db -f bank_db.sql
+psql -U <your_username> -d bank_db -f bank_db_nodb_creation.sql
 ```
 
 > 💡 Replace `<your_username>` with your PostgreSQL username.
