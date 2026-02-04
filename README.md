@@ -1,4 +1,5 @@
 # 🏦 Banking CLI
+[![](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
 A Python-based **command-line banking system** that allows you to manage users, accounts, and transactions with ease. The project uses **PostgreSQL** for persistent storage and provides a simple CLI interface for common banking operations.
 
@@ -36,9 +37,19 @@ Make sure you have the following installed:
 ```bash
 git clone https://github.com/CrazyHayz02/Bank_CLI_SQL
 cd Bank_CLI_SQL
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-python main.py
 ```
+
+### Create Files
+`.env`
+```env
+DB_USER="<Your_DB_Username>"
+DB_PASSWORD="<Your_DB_Password>"
+```
+
+
 ---
 
 ## 🗄️ Database Setup (PostgreSQL)
