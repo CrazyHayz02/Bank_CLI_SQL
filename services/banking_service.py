@@ -1,5 +1,6 @@
 from db.transactions import create_transaction
 from db.config import get_connection
+from db.account import get_balance
 import psycopg2
 from psycopg2.extras import RealDictCursor 
 
@@ -102,6 +103,11 @@ def withdraw(account_id, amount):
         raise InvalidAmountError(
             "Withdrawal amount must be greater than zero."
         )
+
+    balance = get_balance(account_id)
+    print (balance)
+    if (float(balance) - float(amount)) < 0:
+        raise ValueError("Insufficient funds")
     
     con = get_connection()
     cursor = con.cursor(cursor_factory=RealDictCursor)
@@ -112,8 +118,6 @@ def withdraw(account_id, amount):
             (amount, account_id)
         )
         result = cursor.fetchone()
-        if not result or result["balance"] < 0:
-            raise ValueError("Insufficient funds")
         con.commit()
     except Exception:
         con.rollback()

@@ -27,6 +27,20 @@ Make sure you have the following installed:
 
 ---
 
+## Installation
+
+1. Clone the repository
+2. Navigate into project folder
+3. Install dependencies (if any)
+
+```bash
+git clone https://github.com/CrazyHayz02/Bank_CLI_SQL
+cd Bank_CLI_SQL
+pip install -r requirements.txt
+python main.py
+```
+---
+
 ## 🗄️ Database Setup (PostgreSQL)
 
 ### Option 1: Create a New Database
@@ -133,6 +147,25 @@ python main.py
 ```
 
 Follow the on-screen prompts to manage users, accounts, and transactions.
+
+### Example
+```bash
+=== Bank System Menu ===
+1. Create user
+2. Create account
+3. Deposit
+4. Withdraw
+5. Check balance
+6. List transactions
+7. Transfers
+0. Exit
+
+Select an option: 1
+Enter name: James
+Enter email: james@test.com
+
+User created with ID: 1
+```
 
 ---
 
